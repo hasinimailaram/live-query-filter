@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Query Filter System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Live Query Filter System</h1>
+            <p>Search, filter and browse the catalog</p>
+        </header>
+
+
+        <!-- Search Section -->
+        <section class="search-section">
+
+            <label for="searchInput">Search</label>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                autocomplete="off"
+            >
+
+            <p class="search-info">
+                Results update automatically as you type.
+            </p>
+
+        </section>
+
+
+        <!-- Category Section -->
+        <section class="filter-section">
+
+            <h2>Categories</h2>
+
+            <div id="categoryContainer">
+                <p>Loading categories...</p>
+            </div>
+
+        </section>
+
+
+        <!-- Results Information -->
+        <section class="results-header">
+
+            <div>
+                <h2>Results</h2>
+
+                <p id="resultCount">
+                    Loading results...
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- Results -->
+        <section id="resultsContainer" class="results-grid">
+
+            <div class="loading">
+                Loading results...
+            </div>
+
+        </section>
+
+
+        <!-- Empty State -->
+        <section id="emptyState" class="empty-state hidden">
+
+            <h2>No results found</h2>
+
+            <p>
+                Try changing your search or category filters.
+            </p>
+
+        </section>
+
+
+        <!-- Pagination -->
+        <section class="pagination-section">
+
+            <button
+                id="previousButton"
+                class="pagination-button"
+            >
+                ← Previous
+            </button>
+
+            <div id="pageNumbers" class="page-numbers"></div>
+
+            <button
+                id="nextButton"
+                class="pagination-button"
+            >
+                Next →
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
